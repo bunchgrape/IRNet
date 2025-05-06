@@ -134,7 +134,7 @@ def train():
 
     logger.info("Training Done")
     ## plot train loss curve
-    plt.plot(train_losses)
+    plt.plot(train_loss_curve)
     plt.savefig(os.path.join(args.res_root, "train_loss.png"))
 
 if __name__ == "__main__":

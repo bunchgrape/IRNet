@@ -30,8 +30,8 @@ class Parser(object):
 
         ## model hyperparameters
         self.parser.add_argument("--dataroot", default="./train_data")
-        self.parser.add_argument("--ann_file_train", default="./files/train_N28_mini.csv")
-        self.parser.add_argument("--ann_file_test", default="./files/test_N28_mini.csv")
+        self.parser.add_argument("--ann_file_train", default="./index/train_N28.csv")
+        self.parser.add_argument("--ann_file_test", default="./index/test_N28.csv")
         self.parser.add_argument("--dataset_type", default="IRDropDataset")
         self.parser.add_argument("--batch_size", type=int, default=2)
         self.parser.add_argument("--proportion", type=float, default=0.7, help="Proportion of training data")

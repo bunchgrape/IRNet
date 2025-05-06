@@ -1,0 +1,13 @@
+einops==0.8.1
+matplotlib==3.10.1
+mmcv==1.6.1
+numpy==1.24.4
+pandas==2.2.3
+pytorch_msssim==1.0.0
+scikit_learn==1.1.2
+scikit-image==0.19.3
+timm==1.0.15
+torch==2.1.0
+torchvision==0.16.0
+tqdm==4.53.0
+opencv-python==4.6.0.66
