@@ -1,7 +1,6 @@
-# IRNet: Fast Dynamic IR-Drop Prediction with Dual-path Spatial-Temporal Attention
+# DUST: Fast Dynamic IR-Drop Prediction with Dual-path Spatial-Temporal Attention
 
 
-## IRNet
 This is the implementation of the [DATE'25 paper: Fast Dynamic IR-Drop Prediction with Dual-path Spatial-Temporal Attention](https://bunchgrape.github.io/docs/date25_irdrop_prediction.pdf)
 
 The model architecture is as shown in the following figure. 
@@ -20,14 +19,35 @@ Dependencies are listed in `requirements.txt` and can be installed by:
 pip install -r requirements.txt
 ```
 
-The `PyTorch` enviroment on our machine is listed. Please select the suitable PyTorch version and CUDA version to install.
+## Dataset
+
+Please refer to [CircuitNet](https://github.com/circuitnet/CircuitNet) to download and extract the dataset for dynamic ir drop prediction task.
+Put the dataset in the `train_data/` folder. The directory structure should be like this:
+```bash
+├── train_data
+│   ├── feature
+│   │   ├── <feature_map_1>.npy
+│   │   ├── <feature_map_2>.npy
+│   │   ├── ...
+│   ├── label
+│   │   ├── <label_map_1>.npy
+│   │   ├── <label_map_2>.npy
+│   │   ├── ...
+```
+The dataset is indexed by the files under `index/` folder.
 
 ## Configuration
 Please refer to `utils/configs.py` to modify the configurations, where the default parameters are used in our experiments.
 
 ## Usage
-Please refer to `train.py` to perform the training. The testing is included in `test.py`. We provide a pretrained model in `pretrained/model_iters_176950.pth`.
+The pretrained model can be downloaded [here](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155168650_link_cuhk_edu_hk/EZBZToSyUSBOnHOZ_KuI5yUBlm4MudAcQQQFOMoh_H7bSQ?e=x2CwOn).
+We provide a pretrained model in `pretrained/model_iters_176950.pth` and can be downloaded by:
+```bash
+cd pretrained
+bash download.sh
+```
 
+Please refer to `train.py` to perform the training. The testing is included in `test.py`. 
 ```bash
 # for Training
 python train.py --model_type IRNetDual
